@@ -1,25 +1,60 @@
 /*	
-* OOPSBannerApp UC5 - Render OOPS as Banner using Inline Array Initialization
-*This use case extends UC4 by defining and populating the String array in a more consice way at the time of declaration using String.join() method to create 
-*each line of the banner
+* OOPSBannerApp UC6 - OOPS Banner Application
+*This use case extends UC5 by implementing a modular approach to generate each letter's pattern through dedicated methods.
 * @author Harshita
-* @version 5.0
+* @version 6.0
 */
 
 public class OOPSBannerApp{
-	public static void main(String[] args) {
-		String[] lines = {
-			String.join(" ","   ***   ","   ***   "," ******* ","  ***** "),
-			String.join(" "," **   ** "," **   ** "," *      *"," **   **"),
-			String.join(" ","**     **","**     **"," *      *","**      "),
-			String.join(" ","**     **","**     **"," ******* "," *****  "),
-			String.join(" ","**     **","**     **"," *       ","     ** "),
-			String.join(" "," **   ** "," **   ** "," *       ","**   ** "),
-			String.join(" ","   ***   ","   ***   "," *       "," ****   ")
+	
+	public static String[] getOPattern(){
+		return new String[] {
+			"   ***   ",
+			" **   ** ",
+			"**     **",
+			"**     **",
+			"**     **",
+			" **   ** ",
+			"   ***   "
 		};
+	}
+	
+	public static String[] getPPattern(){
+		return new String[] {
+			"******** ",
+			"*      **",
+			"*      **",
+			"******** ",
+			"*        ",
+			"*        ",
+			"*        "
+		};
+	}
+	
+	public static String[] getSPattern(){
+		return new String[] {
+			"  *****  ",
+			" **   ** ",
+			"**       ",
+			" *****   ",
+			"     **  ",
+			"**   **  ",
+			" ****    "
+		};
+	}
+	
+	public static void main(String[] args) {
+		String[] oPattern = getOPattern();
+		String[] pPattern = getPPattern();
+		String[] sPattern = getSPattern();
 				
-		for (String line : lines){
-			System.out.println(line);
+		for (int i = 0; i < oPattern.length; i++){
+			System.out.println(
+			oPattern[i] + "  " + 
+			oPattern[i] + "  " +
+			pPattern[i] + "  " + 
+			sPattern[i]
+			);
 		}
 	}
 }
